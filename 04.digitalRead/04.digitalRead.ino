@@ -20,10 +20,17 @@
     https://github.com/TempeHS/TempeHS_Ardunio_Boilerplate/blob/main/Ardunio_Bootcamp/04.digitalRead/Bootcamp-digitalRead.png
 */
 
-void setup() {
+static unsigned int myButton = 8;
 
+void setup() {
+Serial.begin(9600);
+Serial.println("Serial Monitor Configured set to 9600");
+Serial.println("-------------------------------------");
+pinMode(myButton, INPUT);
 }
 
 void loop() {
-
+ unsigned int val = digitalRead(myButton);
+ Serial.print("ButtonValue;");
+ Serial.println(val);
 }
